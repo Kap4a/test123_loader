@@ -1,0 +1,13 @@
+C:\Users\User\source\repos\loader\bin\Debug\loader.exe.config
+C:\Users\User\source\repos\loader\bin\Debug\loader.exe
+C:\Users\User\source\repos\loader\bin\Debug\loader.pdb
+C:\Users\User\source\repos\loader\obj\Debug\loader.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\loader\obj\Debug\loader.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\loader\obj\Debug\loader.Form1.resources
+C:\Users\User\source\repos\loader\obj\Debug\loader.Properties.Resources.resources
+C:\Users\User\source\repos\loader\obj\Debug\loader.csproj.GenerateResource.cache
+C:\Users\User\source\repos\loader\obj\Debug\loader.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\loader\obj\Debug\loader.exe
+C:\Users\User\source\repos\loader\obj\Debug\loader.pdb
+C:\Users\User\source\repos\loader\obj\Debug\loader.Form2.resources
+C:\Users\User\source\repos\loader\obj\Debug\loader.Form3.resources
