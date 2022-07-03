@@ -12,6 +12,23 @@ namespace loader
 {
     public partial class Form3 : Form
     {
+        private Form activateForm;
+        private void OpenGlobalPanel(Form chieldForm, object btnSender)
+        {
+            if (activateForm != null)
+            {
+                activateForm.Close();
+            }
+            
+            activateForm = chieldForm;
+            chieldForm.TopLevel = false;
+            chieldForm.FormBorderStyle = FormBorderStyle.None;
+            chieldForm.Dock = DockStyle.Fill;
+            this.globalPanel.Controls.Add(chieldForm);
+            this.globalPanel.Tag = chieldForm;
+            chieldForm.BringToFront();
+            chieldForm.Show();
+        }
         public Form3()
         {
             InitializeComponent();
@@ -40,6 +57,21 @@ namespace loader
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenGlobalPanel(new menu.global(),sender);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenGlobalPanel(new menu.about(), sender);
         }
     }
 }
