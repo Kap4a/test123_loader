@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.globalPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,9 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.globalPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,6 +58,14 @@
             this.panel1.Size = new System.Drawing.Size(732, 487);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // globalPanel
+            // 
+            this.globalPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.globalPanel.Location = new System.Drawing.Point(0, 0);
+            this.globalPanel.Name = "globalPanel";
+            this.globalPanel.Size = new System.Drawing.Size(728, 483);
+            this.globalPanel.TabIndex = 1;
             // 
             // label1
             // 
@@ -83,6 +91,9 @@
             this.panel2.Size = new System.Drawing.Size(952, 92);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // button1
             // 
@@ -162,19 +173,6 @@
             this.panel3.Size = new System.Drawing.Size(223, 487);
             this.panel3.TabIndex = 1;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.WindowText;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(-2, -2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(223, 78);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "global";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.WindowText;
@@ -188,13 +186,18 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // globalPanel
+            // button2
             // 
-            this.globalPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.globalPanel.Location = new System.Drawing.Point(0, 0);
-            this.globalPanel.Name = "globalPanel";
-            this.globalPanel.Size = new System.Drawing.Size(728, 483);
-            this.globalPanel.TabIndex = 1;
+            this.button2.BackColor = System.Drawing.SystemColors.WindowText;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Window;
+            this.button2.Location = new System.Drawing.Point(-2, -2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(223, 78);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "global";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form3
             // 

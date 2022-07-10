@@ -12,6 +12,9 @@ namespace loader
 {
     public partial class Form2 : Form
     {
+        bool MousePressed = false;
+        Point clickPosition;
+        Point moveStartPosition;
         public Form2()
         {
             InitializeComponent();
@@ -41,14 +44,36 @@ namespace loader
         {
 
             cokctil.login = textBox1.Text;
-                this.Hide();
-                Form3 form3 = new Form3();
-                form3.Show();
+            this.Hide();
+            Form3 form3 = new Form3();
+            form3.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void Form2_MouseDown(object sender, MouseEventArgs e)
+        {
+            MousePressed = true;
+            clickPosition = Cursor.Position;
+            moveStartPosition = this.Location;
+        }
+
+        private void Form2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MousePressed)
+            {
+                Size frmOffset = new Size(Point.Subtract(Cursor.Position, new Size(clickPosition)));
+                this.Location = Point.Add(moveStartPosition, frmOffset);
+            }
+        }
+
+        private void Form2_MouseUp(object sender, MouseEventArgs e)
+        {
+            MousePressed = false;
+        }
     }
 }
+

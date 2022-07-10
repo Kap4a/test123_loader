@@ -12,6 +12,10 @@ namespace loader
 {
     public partial class Form3 : Form
     {
+        bool MousePressed = false;
+        Point clickPosition;
+        Point moveStartPosition;
+
         private Form activateForm;
         private void OpenGlobalPanel(Form chieldForm, object btnSender)
         {
@@ -72,6 +76,29 @@ namespace loader
         private void button3_Click(object sender, EventArgs e)
         {
             OpenGlobalPanel(new menu.about(), sender);
+        }
+
+       
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            MousePressed = true;
+            clickPosition = Cursor.Position;
+            moveStartPosition = this.Location;
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MousePressed)
+            {
+                Size frmOffset = new Size(Point.Subtract(Cursor.Position, new Size(clickPosition)));
+                this.Location = Point.Add(moveStartPosition, frmOffset);
+            }
+        }
+
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            MousePressed = false;
         }
     }
 }

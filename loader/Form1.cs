@@ -12,14 +12,21 @@ namespace loader
 {
     public partial class Form1 : Form
     {
+        bool MousePressed = false;
+        Point clickPosition;
+        Point moveStartPosition;
+        
+        
         public Form1()
         {
             InitializeComponent();
+            
         }
 
+       
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void close(object sender, MouseEventArgs e)
@@ -49,5 +56,27 @@ namespace loader
             }
 
         }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e )
+        {
+            MousePressed = true;
+            clickPosition = Cursor.Position;
+            moveStartPosition = this.Location;
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e )
+        {
+            if (MousePressed)
+            {
+                Size frmOffset = new Size(Point.Subtract(Cursor.Position, new Size(clickPosition)));
+               this.Location = Point.Add(moveStartPosition, frmOffset);
+            }
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            MousePressed = false;
+        }
     }
 }
+

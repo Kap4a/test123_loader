@@ -13,3 +13,5 @@ C:\Users\User\source\repos\loader\obj\Debug\loader.Form2.resources
 C:\Users\User\source\repos\loader\obj\Debug\loader.Form3.resources
 C:\Users\User\source\repos\loader\obj\Debug\loader.menu.global.resources
 C:\Users\User\source\repos\loader\obj\Debug\loader.menu.about.resources
+C:\Users\User\source\repos\loader\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+C:\Users\User\source\repos\loader\obj\Debug\loader.csproj.CopyComplete

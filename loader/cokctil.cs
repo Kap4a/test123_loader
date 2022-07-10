@@ -8,6 +8,8 @@ namespace loader
 {
     static class cokctil
     {
-      public static string login = "";
+        public static string login = "";
+
     }
+
 }
